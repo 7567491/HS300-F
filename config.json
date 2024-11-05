@@ -1,0 +1,58 @@
+{
+    "data_sources": {
+        "akshare": {
+            "enabled": true,
+            "priority": 1
+        },
+        "baostock": {
+            "enabled": true,
+            "priority": 2
+        }
+    },
+    "data_types": {
+        "market_data": {
+            "hs300": true
+        },
+        "market_sentiment": {
+            "margin_trading": true,
+            "north_money": true,
+            "turnover_rate": true
+        },
+        "market_structure": {
+            "total_mv": true,
+            "pe_ratio": true,
+            "stock_account": true
+        },
+        "macro_data": {
+            "cpi": true,
+            "ppi": true,
+            "m2": true
+        }
+    },
+    "database": {
+        "path": "db/market_data.db"
+    },
+    "cache": {
+        "enabled": true,
+        "expire_days": 1
+    },
+    "validation_rules": {
+        "hs300": {
+            "min_date": "2009-11-01",
+            "check_continuity": true,
+            "check_ohlc": true
+        },
+        "market_sentiment": {
+            "min_date": "2010-01-01",
+            "check_continuity": true
+        },
+        "market_structure": {
+            "min_date": "2010-01-01",
+            "check_continuity": true
+        },
+        "macro_data": {
+            "min_date": "2009-11-01",
+            "check_continuity": false
+        }
+    }
+} 
